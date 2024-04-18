@@ -1,0 +1,17 @@
+package PageFactory;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+
+public class S2PageFac {
+	static WebDriver driver;
+	public S2PageFac(WebDriver driver)
+
+	{
+
+	this.driver=driver;
+
+	PageFactory.initElements(driver,this);
+
+	}
+}

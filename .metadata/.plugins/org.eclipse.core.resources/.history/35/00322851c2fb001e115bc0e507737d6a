@@ -1,0 +1,140 @@
+package PageFactory;
+
+import java.awt.AWTException;
+
+import java.awt.Robot;
+
+import java.awt.event.KeyEvent;
+
+import java.time.Duration;
+ 
+import org.openqa.selenium.By;
+
+import org.openqa.selenium.JavascriptExecutor;
+
+import org.openqa.selenium.WebDriver;
+
+import org.openqa.selenium.WebElement;
+
+import org.openqa.selenium.support.FindBy;
+
+import org.openqa.selenium.support.PageFactory;
+
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class S1PageFac {
+
+static WebDriver driver;
+
+public S1PageFac(WebDriver driver)
+
+{
+
+this.driver=driver;
+
+PageFactory.initElements(driver,this);
+
+}
+public void ExplicitWait(WebElement webElement,int time){
+	 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(time));
+		wait.until(ExpectedConditions.elementToBeClickable(webElement));
+}
+
+@FindBy(xpath="//a[@href='https://www.makemytrip.com/hotels/']")
+WebElement hotel;
+@FindBy(xpath="//div[@class=\"hsw_inner\"]/child::div[@class=\"hsw_inputBox selectHtlCity\"]")
+WebElement city;
+@FindBy(xpath="//div[@class=\"react-autosuggest__container react-autosuggest__container--open\"]/child::div[@class=\"hw__searchInputWrapper\"]/input[@placeholder=\"Where do you want to stay?\"]")
+WebElement inputLocation;
+@FindBy(xpath="//div[@class=\"react-autosuggest__section-container react-autosuggest__section-container--first\"]/child::ul[@class=\"react-autosuggest__suggestions-list\"]/child::li[@id=\"react-autowhatever-1-section-0-item-0\"][1]")
+WebElement cityDrop;
+@FindBy(xpath = "//div[@class=\"DayPicker-Months\"]/child::div[@class=\"DayPicker-Month\"]/child::div[@class=\"DayPicker-Body\"]/child::div[@class=\"DayPicker-Week\"][4]/child::div[@aria-label=\"Wed Apr 24 2024\"]")
+WebElement checkIn;
+@FindBy(xpath = "//div[@class=\"DayPicker-Months\"]/child::div[@class=\"DayPicker-Month\"]/child::div[@class=\"DayPicker-Body\"]/child::div[@class=\"DayPicker-Week\"][4]/child::div[@aria-label=\"Thu Apr 25 2024\"]")
+WebElement checkOut;
+@FindBy(xpath = "//div[@class=\"rmsGst\"]/child::div[@class=\"rmsGst__footer\"]/child::button[@class=\"primaryBtn btnApplyNew pushRight capText\"]")
+WebElement applybttn;
+@FindBy(xpath="//button[@id=\"hsw_search_button\"]")
+WebElement searchbttn;
+@FindBy(xpath="//div[@id=\"STAR_CATEGORY\"]/child::ul/child::li[1]")
+WebElement starCategory;
+@FindBy(xpath="//div[@id=\"USER_RATING_MMT_BRAND\"]/child::ul/child::li[1]")
+WebElement userRating;
+@FindBy(xpath="//div[@id=\"MERGE_PROPERTY_TYPE\"]/child::ul/child::li[1]")
+WebElement propertyType;
+@FindBy(xpath="//div[@class=\"appendBottom15 bdrBottom\"]/child::div/child::span")
+WebElement assertFilter;
+
+
+public void  hotelClick() throws InterruptedException
+{
+	hotel.click();
+}
+public void enterLocation(String Location) throws InterruptedException, AWTException
+{
+	ExplicitWait(city,3);
+	city.click();
+	ExplicitWait(inputLocation,3);
+	inputLocation.sendKeys(Location);
+	Robot r=new Robot();
+	r.keyPress(KeyEvent.VK_DOWN);
+	r.keyPress(KeyEvent.VK_ENTER);
+//	cityDrop.click();
+}
+public void enterCheckin() throws InterruptedException
+{
+	ExplicitWait(checkIn,3);	
+	checkIn.click();
+} 
+public void enterCheckout() throws InterruptedException
+{
+	ExplicitWait(checkOut,3);
+	checkOut.click();
+} 
+public void applyClick() throws InterruptedException
+{   
+	ExplicitWait(applybttn,3);
+	JavascriptExecutor js=(JavascriptExecutor)driver;
+	js.executeScript("window.scrollBy(0,200)");
+	ExplicitWait(applybttn,3);
+	applybttn.click();
+}
+public void searchClick()
+{
+	ExplicitWait(searchbttn,3);
+	searchbttn.click();
+	
+}
+public String result()
+{
+	return assertFilter.getText();
+}
+//===============================================================================================================================
+
+public void applyFilter()
+{
+	JavascriptExecutor js=(JavascriptExecutor)driver;
+	js.executeScript("window.scrollBy(0,300)");
+	ExplicitWait(starCategory,3);
+	starCategory.click();
+	ExplicitWait(userRating,3);
+	userRating.click();
+	ExplicitWait(propertyType,3);
+	js.executeScript("window.scrollBy(0,400)");
+	propertyType.click();
+		
+}
+//===============================================================================================================================
+public void enterDetails(String Location) throws AWTException
+{
+city.click();
+ExplicitWait(inputLocation,3);
+inputLocation.sendKeys(Location);
+Robot r=new Robot();
+r.keyPress(KeyEvent.VK_DOWN);
+r.keyPress(KeyEvent.VK_ENTER);
+}
+}
+

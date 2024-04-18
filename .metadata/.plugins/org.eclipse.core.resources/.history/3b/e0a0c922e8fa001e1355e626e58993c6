@@ -1,0 +1,42 @@
+package PageFactory;
+
+import java.time.Duration;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class S2PageFac {
+	static WebDriver driver;
+	public S2PageFac(WebDriver driver)
+
+	{
+
+	this.driver=driver;
+
+	PageFactory.initElements(driver,this);
+
+	}
+	public void ExplicitWait(WebElement webElement,int time){
+		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(time));
+			wait.until(ExpectedConditions.elementToBeClickable(webElement));
+	}
+	@FindBy(xpath="//button[@id=\"hsw_search_button\"]")
+
+	WebElement searchbttn2;
+	
+	@FindBy(xpath="//div[@class=\"filterRow \"]/child::ul[@class=\"filterList\"]/child::li[2]/child::span[@class=\" checkmarkOuter\"]/child::input[@aria-label=\"5 Star\"]")
+	WebElement checkBox5star;
+ 
+	public void applyFilter()
+	{
+		ExplicitWait(checkBox5star,3);
+		checkBox5star.click();	}
+//	public void clickSearch()
+//	{
+//	searchbttn2.click();
+//	}
+}

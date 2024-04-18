@@ -1,0 +1,55 @@
+#Scenario 1
+#Created By: Suryanshi Jain
+#Verified By: Deepali Dhole
+#Reviewed By:
+#Description:
+
+Feature: Hotel Booking Functionalities
+
+  Background: 
+    Given user is on homepage of Make My Trip Website
+    When user clicks on the hotels section
+@Scenario1
+  Scenario Outline: User searches for hotels
+    And User enters details "<Location>", "<Checkin>", "<Checkout>" & "<Rooms_Guest>"
+    And click on Apply button
+    And click on Search button
+    Then relevant hotel options matching the search criteria are displayed
+
+    Examples: 
+      | Location | Checkin       | Checkout      | Rooms_Guests |
+      | Delhi    | 24,April 2024 | 25,April 2024 | 1, 2, 0      |
+#=================================================================================================================
+#Scenario 2
+#Created By: Suryanshi Jain
+#Verified By: Deepali Dhole
+#Reviewed By:
+#Description:
+@Scenario2   
+  Scenario: User filter hotel search results
+    When user has preformed a hotel search
+    And user applies filters such as user rating, star category, property type and room amenities etc.
+    Then search results are updated to reflect the applied filters
+   
+#===================================================================================================================
+#Scenario 3
+#Created By: Suryanshi Jain
+#Verified By: Deepali Dhole
+#Reviewed By:
+#Description:
+#@Scenario3 
+  #Scenario: Sort hotels by price
+    #Given user has preformed a hotel search
+    #When user clicks on SORT BY:Price(Lowest First)//user sort the search results by price from low to high
+    #Then user should see hotels listed in ascending order of price 
+#===================================================================================================================
+#Scenario 4
+#Created By: Suryanshi Jain
+#Verified By: Deepali Dhole
+#Reviewed By:
+#Description:
+#@Scenario4
+ #Scenario: user Searches for particular hotel
+    #When user has preformed a hotel search
+    #And The user enters name of a hotel
+    #Then List of relevent hotel names are displayed

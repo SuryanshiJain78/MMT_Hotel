@@ -1,0 +1,27 @@
+package PageFactory;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class S2PageFac {
+	static WebDriver driver;
+	public S2PageFac(WebDriver driver)
+
+	{
+
+	this.driver=driver;
+
+	PageFactory.initElements(driver,this);
+
+	}
+	@FindBy(xpath="//button[@id=\"hsw_search_button\"]")
+
+	WebElement searchbttn2;
+ 
+//	public void clickSearch()
+//	{
+//	searchbttn2.click();
+//	}
+}

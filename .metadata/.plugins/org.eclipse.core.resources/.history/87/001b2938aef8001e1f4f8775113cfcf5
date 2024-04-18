@@ -1,0 +1,62 @@
+#Scenario 1
+#Created By: Suryanshi Jain
+#Verified By: Deepali Dhole
+#Reviewed By:
+#Description:
+
+Feature: Hotel Booking Functionalities
+
+  Background: 
+    Given user is on homepage of Make My Trip Website
+    When user clicks on the hotels section
+@Scenario1
+  Scenario Outline: User searches for hotels
+    And User enters details "<Location>", "<Checkin>", "<Checkout>" & "<Rooms_Guest>"
+    And click on Apply button
+    And click on Search button
+    Then relevant hotel options matching the search criteria are displayed
+
+    Examples: 
+      | Location | Checkin       | Checkout      | Rooms_Guests |
+      | Delhi    | 24,April 2024 | 25,April 2024 | 1, 2, 0      |
+#=================================================================================================================
+#Scenario 2
+#Created By: Suryanshi Jain
+#Verified By: Deepali Dhole
+#Reviewed By:
+#Description:
+@Scenario2
+#Feature: To check the functionality of Cabs section of MakeMyTrip
+#
+  #Background:
+    #Given User is on Homepage
+    #When User selects Cab option
+#
+  #Scenario: To check OneWay functionality of cab option
+    #And User selects Outstaion One-Way option
+    #And User enters the details Source,Destination,Departure_Date and Pickup_Time
+      #| Source | Destination | Departure_Date | Pickup_Time |
+      #| Mumbai | Pune        | 24,April 2024  | 11:00:AM    |
+    #And Click on Search button
+    #Then Landing page of Outstaion One-Way is opened
+#
+  #Scenario Outline: To verify Outstation Round-Trip functionality of cab option
+    #And User clicks on Outstation Round-Trip
+    #And User enters "<Source>","<Destination>","<Departure_Date>","<Return_Date>" ,"<Pickup_Time>" and "<Drop_Time>"
+    #And Click on the Search button
+    #Then Landing page of Outstation Round-Trip is opened
+#
+    #Examples:
+      #| Source | Destination | Departure_Date | Return_Date | Pickup_Time | Drop_Time |
+      #| Mumbai | Pune        | 24,April 2024  | 1,May 2024  | 11:00:AM    | 11:35:PM  |    
+#@tag2
+  #Scenario: User filter hotel search results
+    #Given user has preformed a hotel search
+    #When user seletes filters such as "<user rating>","<star category>","<property type>" and "<room amenities>"etc.
+    #Then search results are updated to reflect the applied filters
+   #
+#@tag3
+  #Scenario: Sort hotels by price
+    #Given user has preformed a hotel search
+    #When user clicks on SORT BY:Price(Lowest First)//user sort the search results by price from low to high
+    #Then user should see hotels listed in ascending order of price   

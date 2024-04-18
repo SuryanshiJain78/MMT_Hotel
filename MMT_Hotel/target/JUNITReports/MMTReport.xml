@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="102.418" tests="5" skipped="0" failures="1" errors="0">
+<testcase classname="Hotel Booking Functionalities" name="User searches for hotels - Example #1.1" time="18.204">
+<system-out><![CDATA[
+Given user is on homepage of Make My Trip Website...........................passed
+When user clicks on the hotels section......................................passed
+And User enters details "Delhi", "24,April 2024", "25,April 2024" & "<Rooms_Guest>".passed
+And click on Apply button...................................................passed
+And click on Search button..................................................passed
+Then relevant hotel options matching the search criteria are displayed......passed
+]]></system-out>
+</testcase>
+<testcase classname="Hotel Booking Functionalities" name="User filter hotel search results" time="32.668">
+<system-out><![CDATA[
+Given user is on homepage of Make My Trip Website...........................passed
+When user clicks on the hotels section......................................passed
+When user has preformed a hotel search......................................passed
+And user applies filters such as user rating, star category, property type and room amenities etc..passed
+Then search results are updated to reflect the applied filters..............passed
+]]></system-out>
+</testcase>
+<testcase classname="Hotel Booking Functionalities" name="To verify Group Deals functionality of Hotel option" time="17.924">
+<system-out><![CDATA[
+Given user is on homepage of Make My Trip Website...........................passed
+When user clicks on the hotels section......................................passed
+When user clicks on Group Deals.............................................passed
+And User enter details......................................................passed
+And click on apply..........................................................passed
+And click on Get Me Best Prices button......................................passed
+Then relevant properties with group deals are displayed.....................passed
+]]></system-out>
+</testcase>
+<testcase classname="Hotel Booking Functionalities" name="To check Currency change functionality" time="22.983">
+<system-out><![CDATA[
+Given user is on homepage of Make My Trip Website...........................passed
+When user clicks on the hotels section......................................passed
+When user has performed a hotel search......................................passed
+And User clicks on currency dropdown........................................passed
+And Selects the required currency...........................................passed
+Then The currency of the hotel price should change accordingly..............passed
+]]></system-out>
+</testcase>
+<testcase classname="Hotel Booking Functionalities" name="To verify that in suggested list &quot;City/Location/Area&quot; should display name according to the first initial" time="10.275">
+<failure type="org.openqa.selenium.NoSuchElementException" message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&quot;appendBottom15 bdrBottom&quot;]/child::div/child::span&quot;}
+  (Session info: chrome=123.0.6312.124)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7c190bf63745629c7aab655ffec7ce0d, findElement {using=xpath, value=//div[@class=&quot;appendBottom15 bdrBottom&quot;]/child::div/child::span}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 123.0.6312.124, chrome: {chromedriverVersion: 123.0.6312.122 (31f8248cdd9..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51176}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51176/devtoo..., se:cdpVersion: 123.0.6312.124, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7c190bf63745629c7aab655ffec7ce0d">
+<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class="appendBottom15 bdrBottom"]/child::div/child::span"}
+  (Session info: chrome=123.0.6312.124)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7c190bf63745629c7aab655ffec7ce0d, findElement {using=xpath, value=//div[@class="appendBottom15 bdrBottom"]/child::div/child::span}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 123.0.6312.124, chrome: {chromedriverVersion: 123.0.6312.122 (31f8248cdd9..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51176}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51176/devtoo..., se:cdpVersion: 123.0.6312.124, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7c190bf63745629c7aab655ffec7ce0d
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy27.getText(Unknown Source)
+	at PageFactory.S1PageFac.result(S1PageFac.java:118)
+	at StepDefinition.Search_StepDef.it_should_display_all_the_city_names_starting_with_first_letter(Search_StepDef.java:146)
+	at ✽.It should display all the City names Starting with first letter(file:///C:/Users/SUJAIN/Desktop/Sprint%202/MMT_Hotel/src/test/resource/Features/MMTHotel.feature:72)
+]]>
+</failure>
+<system-out><![CDATA[
+Given user is on homepage of Make My Trip Website...........................passed
+When user clicks on the hotels section......................................passed
+And User clicks on location search bar......................................passed
+And Enter the initial letter of city........................................passed
+Then It should display all the City names Starting with first letter........failed
+]]></system-out>
+</testcase>
+</testsuite>

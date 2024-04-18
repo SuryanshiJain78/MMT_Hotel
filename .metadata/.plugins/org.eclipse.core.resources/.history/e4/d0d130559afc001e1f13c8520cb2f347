@@ -1,0 +1,19 @@
+package TestRunner;
+
+import org.junit.runner.RunWith;
+ 
+import io.cucumber.junit.Cucumber;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
+@RunWith(Cucumber.class)
+@CucumberOptions(features="src\\test\\resource\\Features\\MMTHotel.feature",
+glue="StepDefinition",
+tags="@Scenario4")
+//plugin= {"pretty", 
+//		"html:target/HTMLReports/MMTReport.html",	
+//		"json:target/JSONReports/MMTReport.json",
+//		"junit:target/JUNITReports/MMTReport.xml",
+//"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+//})
+public class HotelTestRunner extends AbstractTestNGCucumberTests {
+}
